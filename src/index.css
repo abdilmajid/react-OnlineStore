@@ -6,9 +6,45 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  background-color: rgb(248, 247, 247)
 }
+
+*{
+  box-sizing: border-box;
+}
+
+.page-container {
+  width: 800px;
+  margin: 10px auto;
+  background-color: white;
+  border-radius: 10px;
+  padding: 32px;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+li {
+  list-style: none;
+}
+
+
+.product-listing {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.product-listing .product-list-item {
+  padding: 10px 30px;
+  width: 200px;
+}
+
+
+
