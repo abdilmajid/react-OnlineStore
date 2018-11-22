@@ -1,13 +1,17 @@
 import React from 'react';
 import ProductListItem from './ProductListItem';
 
+import { connect } from 'react-redux';
+
+
 const ProductListing = (props) => {
   return (
     <div className='product-listing'>
       {
         props.products.map((product) => {
-            return (
-              <ProductListItem product={product}/>
+          {// JSONdata => Porducts(prop) passed from HomePage.js renamed as product and then passed to ProductListItems.js as prop
+          } return ( 
+              <ProductListItem key={product.id} product={product}/>
             )
         })
       }
@@ -15,5 +19,19 @@ const ProductListing = (props) => {
   )
 }
 
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart
+  }
+  
+}
 
-export default ProductListing;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (item) => dispatch({type: 'ADD', payload: item}),
+    removeFromCart: (item) => dispatch({type: 'REMOVE', payload: item})
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductListing);

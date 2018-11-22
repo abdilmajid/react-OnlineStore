@@ -5,7 +5,9 @@ import HomePage from './pages/HomePage';
 import Cart from './pages/Cart';
 
 
+
 const Router = () => (
+  //Switch allows pages to change by path
   <Switch>
     <Route exact path='/' component={HomePage}/>
     <Route exact path='/cart' component={Cart}/>
