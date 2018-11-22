@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+
+import Addbtn from './AddBtn';
+import RemoveBtn from './RemoveBtn'
 
 const ProductListItem = (props) => {
   return (
@@ -11,8 +14,21 @@ const ProductListItem = (props) => {
       />
       <div>{props.product.description}</div>
       <div>${props.product.price}</div>
-      <div>
-        <button>Add to cart</button>
+      <div>{
+        // call function addToCart and pass argument props.product, this add the item to our state
+      } <Addbtn 
+            cartItem={props.cartItem}
+            product={props.product}
+            addToCart={props.addToCart}
+          />
+          {
+            props.cartItem
+              ? <RemoveBtn 
+                cartItem={props.cartItem}
+                product={props.product}
+                removeFromCart={props.removeFromCart}/>
+              : null
+          }
       </div>
     </div>
   )

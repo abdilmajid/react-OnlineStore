@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductListItem from './ProductListItem';
+import { cartItemsWithQuantity } from '../cart';
 
 import { connect } from 'react-redux';
 
@@ -9,9 +10,15 @@ const ProductListing = (props) => {
     <div className='product-listing'>
       {
         props.products.map((product) => {
-          {// JSONdata => Porducts(prop) passed from HomePage.js renamed as product and then passed to ProductListItems.js as prop
+          {// JSONdata => Porducts(prop), addToCart and removeFromCart, are passed to ProductListItems.js as prop
           } return ( 
-              <ProductListItem key={product.id} product={product}/>
+              <ProductListItem 
+                  key={product.id} 
+                  product={product}
+                  addToCart={props.addToCart}
+                  removeFromCart={props.removeFromCart}
+                  cartItem={props.cart.filter(cartItem => cartItem.id === product.id)[0]}
+              />
             )
         })
       }

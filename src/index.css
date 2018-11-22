@@ -46,5 +46,8 @@ li {
   width: 200px;
 }
 
-
+.itemAdd {
+  color: green;
+  font-weight: 800;
+}
 
