@@ -22,7 +22,8 @@ class ProductListing extends Component {
           products.map((product) => {
             {// JSONdata => Porducts(prop), addToCart and removeFromCart, are passed to ProductListItems.js as prop
             } return ( 
-                <ProductListItem 
+                <ProductListItem
+                    key={product.id} 
                     product={product}
                     addToCart={addToCart}
                     removeFromCart={removeFromCart}
