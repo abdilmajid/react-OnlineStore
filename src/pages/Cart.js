@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
+import Cart from '../features/cart';
 
-const Cart = (props) => {
+const CartPage = (props) => {
   return (
     <div>
-      <h1>Cart Page</h1>
+      <h1>My Cart</h1>
+      <Cart key={props.id}/>
     </div>
   )
 }
 
 
 
-export default Cart;
+export default CartPage;

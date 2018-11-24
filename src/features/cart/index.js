@@ -1,10 +1,17 @@
-import React from 'react'
+import React from 'react';
 import { connect } from 'react-redux';
+
+//Stops items from moving up and down, sorts items by id
+const sortItem = (items) => {
+  return items.sort((a, b) => {
+    return a.id < b.id
+  })
+}
+
 
 
 const Cart = (props) => {
-  return (
-    <table>
+  return <table>
       <thead>
         <tr>
           <th>Item</th>
@@ -15,23 +22,22 @@ const Cart = (props) => {
       </thead>
       <tbody>
         {
-          props.cart.map(item => 
-            <tr>
+          sortItem(props.cart).map(item => <tr>
               <td>{item.name}</td>
               <td>{item.quantity}</td>
               <td>
                 <button
-                  onClick={(e) => props.addToCart(item)}
+                  onClick={() => props.addToCart(item)}
                 >+</button>
               </td>
               <td>
               <button
-                onClick={(e) => props.removeFromCart(item)}
+                onClick={() => props.removeFromCart(item)}
               >-</button>
               </td>
               <td>
                 <button
-                  onClick={(e) => props.removeAllFromCart(item)}
+                  onClick={() => props.removeAllFromCart(item)}
                 >Remove All</button>
               </td>
             </tr>
@@ -39,7 +45,6 @@ const Cart = (props) => {
         }
       </tbody>
     </table>
-  )
 }
 
 const mapStateToProps = (state) => {
@@ -50,9 +55,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (item) => dispatch({ type: 'ADD', payload: item}),
-    removeFromCart: (item) => dispatch({ type: 'REMOVE', payload: item}),
-    removeAllFromCart: (item) => dispatch({ type: 'REMOVE_ALL', payload: item})
+    addToCart: (item) => {dispatch({ type: 'ADD', payload: item})},
+    removeFromCart: (item) => {dispatch({ type: 'REMOVE', payload: item})},
+    removeAllFromCart: (item) => {dispatch({ type: 'REMOVE_ALL', payload: item})}
   }
 }
 
