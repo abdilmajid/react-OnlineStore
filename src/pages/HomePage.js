@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ProductListing from '../features/product-listing';
 
 
@@ -7,7 +6,7 @@ import ProductListing from '../features/product-listing';
 const HomePage = (props) => {
   return (
     <div>
-      <h1>HomePage</h1>{
+      <h1>Home Page</h1>{
       //Import data and pass as props to productListing Component
       }<ProductListing />
     </div>

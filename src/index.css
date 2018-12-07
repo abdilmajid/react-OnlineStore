@@ -71,3 +71,92 @@ ul.top-menu li:before {
 ul.top-menu li:nth-child(1):before {
   content: '';
 }
+
+
+.checkout {
+  margin-bottom: 50px;
+}
+
+.btn_add {
+
+}
+
+.btn_remove {
+  display: inline-block;
+  padding: 6px 16px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: 1px solid #adadad;
+  border-radius: 4px;
+  background-color: white;
+  margin-top: 1px;
+}
+
+.btn_remove:hover {
+  color: white;
+  background-color: rgba(215, 35, 53, 0.87);
+  border-color: #adadad;
+  font-weight: 600;
+}
+
+.btn-default:hover {
+  color: white;
+  background-color: rgba(0, 199, 43, 1);
+  border-color: #adadad;
+  font-weight: 600;
+}
+
+.btn-default:focus {
+  color: white;
+  background-color: rgba(0, 199, 43, 1);
+  border-color: #adadad;
+  font-weight: 600;
+}
+
+.btn-remove-small {
+  display: inline-block;
+  padding: 6px 16px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: 1px solid #adadad;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.btn-remove-small:hover {
+  color: white;
+  background-color: rgba(215, 35, 53, 0.87);
+  border-color: #adadad;
+  font-weight: 600;
+}
+
+.btn-remove-small:focus {
+  color: white;
+  background-color: rgba(215, 35, 53, 0.87);
+  border-color: #adadad;
+  font-weight: 600;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 22px;
+  margin: 10px 0 5px 20px;
+}

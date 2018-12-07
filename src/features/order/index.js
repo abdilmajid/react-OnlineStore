@@ -29,7 +29,6 @@ class Order extends Component {
         <h3>Order info</h3>
         <div>Name: { name }</div>
         <div>Email: { email }</div>
-
         <h4>Items</h4>
         <ul>
           {
@@ -44,7 +43,7 @@ class Order extends Component {
                 ({qty} @ ${price} = ${parseFloat(qty) * parseFloat(price)})
               </li>
             })
-          }
+          } 
         </ul>
       </div>
     )

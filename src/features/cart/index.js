@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Button, Table} from 'react-bootstrap';
 
 //Stops items from moving up and down, sorts items by id
 const sortItem = (items) => {
@@ -11,7 +12,7 @@ const sortItem = (items) => {
 
 
 const Cart = (props) => {
-  return <table>
+  return <Table striped bordered condensed hover>
       <thead>
         <tr>
           <th>Item</th>
@@ -26,17 +27,21 @@ const Cart = (props) => {
               <td>{item.name}</td>
               <td>{item.quantity}</td>
               <td>
-                <button
+                <Button
                   onClick={() => props.addToCart(item)}
-                >+</button>
+                >+</Button>
               </td>
               <td>
               <button
+                style={{outline: 'none'}} 
+                className='btn-remove-small'
                 onClick={() => props.removeFromCart(item)}
               >-</button>
               </td>
               <td>
                 <button
+                  style={{outline: 'none'}} 
+                  className='btn-remove-small'
                   onClick={() => props.removeAllFromCart(item)}
                 >Remove All</button>
               </td>
@@ -44,7 +49,7 @@ const Cart = (props) => {
           )
         }
       </tbody>
-    </table>
+    </Table>
 }
 
 const mapStateToProps = (state) => {

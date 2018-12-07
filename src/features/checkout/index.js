@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Cart from '../cart';
-import CheckourForm from '../checkout/form';
+import CheckoutForm from '../checkout/form';
 import fetchApi from '../../modules/fetch-api';
 
 const submitOrder = (values, cart) => {
@@ -22,6 +22,8 @@ const submitOrder = (values, cart) => {
       alert('Something Went Wrong!')
       return json;
     }
+    console.log('Values:',values)
+    console.log('Cart:',cart)
     document.location.href = `/orders/${json.id}`
   })
 }
@@ -30,12 +32,12 @@ const Checkout = (props) => {
   const { cart } = props
   return (
     <div>
-      <div style={{border: '1px solid black'}}>
+      <div className='checkout'>
         <Cart />
       </div>{
 // submitOrder passes values from reduxForm and cart
       }
-      <CheckourForm onSubmit={(values) => submitOrder(values, cart)}/>
+      <CheckoutForm onSubmit={(values) => submitOrder(values, cart)}/>
     </div>
   )
 }

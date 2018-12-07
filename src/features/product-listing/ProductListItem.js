@@ -1,37 +1,63 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Button, Collapse } from 'react-bootstrap';
+
 
 import Addbtn from './AddBtn';
 import RemoveBtn from './RemoveBtn'
 
-const ProductListItem = (props) => {
-  return (
-    <div className='product-list-item'>
-      <h3>{props.product.name}</h3>
-      <img
-        height={100}
-        title= {props.product.name}
-        src= {props.product.image}
-      />
-      <div>{props.product.description}</div>
-      <div>${props.product.price}</div>
-      <div>{
-        // call function addToCart and pass argument props.product, this add the item to our state
-      } <Addbtn 
-            cartItem={props.cartItem}
-            product={props.product}
-            addToCart={props.addToCart}
-          />
-          {
-            props.cartItem
-              ? <RemoveBtn 
-                cartItem={props.cartItem}
-                product={props.product}
-                removeFromCart={props.removeFromCart}/>
-              : null
-          }
+class ProductListItem extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      open: false
+    }
+  }
+
+  render() {
+    return (
+      <div className='product-list-item'>
+        <h4>{this.props.product.name}</h4>
+        <img
+          height={100}
+          title= {this.props.product.name}
+          src= {this.props.product.image}
+          alt='item'
+        />
+        <div className='price'>${this.props.product.price}</div>  
+        <div>{
+          // call function addToCart and pass argument props.product, this add the item to our state
+        } <Addbtn 
+              cartItem={this.props.cartItem}
+              product={this.props.product}
+              addToCart={this.props.addToCart}
+            />
+            {
+              this.props.cartItem
+                ? <RemoveBtn 
+                  cartItem={this.props.cartItem}
+                  product={this.props.product}
+                  removeFromCart={this.props.removeFromCart}/>
+                : null
+            }
+          <div>
+            <Button
+              className='item-details-button'
+              bsStyle='link'
+              onClick={() => this.setState({open: !this.state.open})}
+              style={{outline: 'none'}}
+            >
+              {this.state.open === false ? `See` : `Hide`} item details
+              {this.state.open === false ? ` +` : ` -`}
+            </Button>
+            <Collapse in={this.state.open}>
+              <div>{this.props.product.description}</div>
+            </Collapse>
+          </div>  
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
+
 }
 
 

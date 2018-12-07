@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { Button } from 'react-bootstrap';
 
 const AddBtn = (props) => {
   return (
-    <button 
+    <Button
+      style={{outline: 'none'}} 
       onClick={() => props.addToCart(props.product)}
     >Add to cart ({
       (props.cartItem && props.cartItem.quantity) || 0
-    })</button>
+    })</Button>
   )
 }
 
