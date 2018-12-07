@@ -14,12 +14,10 @@ function CheckoutForm(props) {
         <label htmlFor="order[name]">Name:</label><br/>
         <Field name="order[name]" component="input" type="text" />
       </FormGroup>
-
       <FormGroup controlId="formInlineName">
         <label htmlFor="order[email]">Email:</label><br/>
         <Field name="order[email]" component="input" type="email" />
       </FormGroup>
-
       <div>
         <NavLink to='/cart'>
           <Button className='go-back'>Back</Button>
@@ -35,4 +33,4 @@ CheckoutForm = reduxForm({
   form: 'checkout'
 })(CheckoutForm)
 
-export default CheckoutForm
+export default CheckoutForm;

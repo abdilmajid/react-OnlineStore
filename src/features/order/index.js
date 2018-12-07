@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import fetchApi from '../../modules/fetch-api';
-
+import { Row , Col, Media } from 'react-bootstrap';
 
 class Order extends Component {
   constructor(){
     super()
 
     this.state = {
-      order: null
+      order: null,
     }
   }
 
@@ -28,27 +28,41 @@ class Order extends Component {
     const orderTotal = order_items.reduce((all, item, index) => {
       const { qty, product: {price}} = item
       all += (qty * price);
-      return all;
+      const total = parseFloat(all.toFixed(2))
+      return total;
     }, 0)
 
     return (
       <div>
-        <h3>Order info</h3>
-        <div>Name: { name }</div>
-        <div>Email: { email }</div>
+        <h3>Order info for {name}</h3>
+        <div>Contact: { email }</div>
         <h4>Items</h4>
         <ul>
           {
             order_items && order_items.map(item => {
-              const { product, qty, product: {name, image, price}} = item
-              return <li>
-                <img 
-                  src={image}
-                  width={32}
-                />
-                {name}
-                ({qty} @ ${price} = ${parseFloat(qty) * parseFloat(price)})
-              </li>
+              const { qty, product: {name, image, price, }} = item
+              
+              return (
+              <div>
+                <div className='item-info'>
+                  <Media>
+                    <Media.Left>
+                      <img src={image} width={50}/>
+                    </Media.Left>
+                    <Media.Body>
+                      <p>{name}</p>
+                      <p>Qty:{qty}  Cost: ${parseFloat(qty) * parseFloat(price)}</p>
+                    </Media.Body>
+                    <Row className='show-grid'>
+                      <Col md={6}>
+                        <strong>${price}</strong>
+                      </Col>
+                    </Row>
+                  </Media>
+                </div>
+              </div>
+              
+              )
             })
           } 
         </ul>
@@ -58,12 +72,11 @@ class Order extends Component {
   }
 
   render() {
-    const { order } = this.state
-
+    const { order} = this.state
     return (
       <div>
         {
-          order ? this.renderOrder() : '<h2>Loading...<h2>'
+          order ? this.renderOrder() : 'Loading...'
         }
       </div>
     )

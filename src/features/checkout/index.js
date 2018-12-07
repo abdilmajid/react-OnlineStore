@@ -34,9 +34,7 @@ const Checkout = (props) => {
     <div>
       <div className='checkout'>
         <Cart />
-      </div>{
-// submitOrder passes values from reduxForm and cart
-      }
+      </div>
       <CheckoutForm onSubmit={(values) => submitOrder(values, cart)}/>
     </div>
   )
