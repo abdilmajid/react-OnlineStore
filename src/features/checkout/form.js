@@ -1,6 +1,7 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { Form , FormGroup, Button, ControlLabel} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 
 function CheckoutForm(props) {
@@ -10,7 +11,7 @@ function CheckoutForm(props) {
   <div>
     <Form onSubmit={handleSubmit}>
       <FormGroup controlId="formInlineName">
-        <label htmlFor="order[name]">Your name:</label><br/>
+        <label htmlFor="order[name]">Name:</label><br/>
         <Field name="order[name]" component="input" type="text" />
       </FormGroup>
 
@@ -20,6 +21,9 @@ function CheckoutForm(props) {
       </FormGroup>
 
       <div>
+        <NavLink to='/cart'>
+          <Button className='go-back'>Back</Button>
+        </NavLink>        
         <Button type="submit">Submit order</Button>
       </div>
     </Form>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Collapse } from 'react-bootstrap';
-
+import { Button, Collapse} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 import Addbtn from './AddBtn';
 import RemoveBtn from './RemoveBtn'
@@ -33,10 +33,13 @@ class ProductListItem extends Component {
             />
             {
               this.props.cartItem
-                ? <RemoveBtn 
+                ? <div><RemoveBtn 
                   cartItem={this.props.cartItem}
                   product={this.props.product}
                   removeFromCart={this.props.removeFromCart}/>
+                  <NavLink to='/cart'>
+                  <Button className='go-checkout-home'>Go to cart</Button> 
+                </NavLink></div>
                 : null
             }
           <div>
@@ -50,7 +53,11 @@ class ProductListItem extends Component {
               {this.state.open === false ? ` +` : ` -`}
             </Button>
             <Collapse in={this.state.open}>
-              <div>{this.props.product.description}</div>
+              
+              <div className='item-info'>
+              {this.props.product.description}
+              </div>
+              
             </Collapse>
           </div>  
         </div>

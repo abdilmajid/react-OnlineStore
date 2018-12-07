@@ -24,6 +24,13 @@ class Order extends Component {
   renderOrder = () => {
     // all info coming from Api
     const { name, email, order_items } = this.state.order
+
+    const orderTotal = order_items.reduce((all, item, index) => {
+      const { qty, product: {price}} = item
+      all += (qty * price);
+      return all;
+    }, 0)
+
     return (
       <div>
         <h3>Order info</h3>
@@ -45,6 +52,7 @@ class Order extends Component {
             })
           } 
         </ul>
+        <h3>Purchase Total: ${orderTotal}</h3>
       </div>
     )
   }
@@ -55,7 +63,7 @@ class Order extends Component {
     return (
       <div>
         {
-          order ? this.renderOrder() : 'Loading...'
+          order ? this.renderOrder() : '<h2>Loading...<h2>'
         }
       </div>
     )

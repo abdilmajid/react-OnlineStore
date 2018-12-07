@@ -21,6 +21,8 @@ const removeAllFromCart = (cart, item) => {
   return [...cartWithoutItem(cart, item)]
 } 
 
+
+
 const cartReducer = (state = [], action) => {
   switch(action.type) {
     case 'ADD':
