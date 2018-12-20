@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { Form , FormGroup, Button, ControlLabel} from 'react-bootstrap';
+import { Form , FormGroup, Button} from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 

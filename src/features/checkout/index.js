@@ -7,12 +7,11 @@ import fetchApi from '../../modules/fetch-api';
 
 const submitOrder = (values, cart) => {
   const { email, name } = values.order
-  // Post orders to API
-  fetchApi('post', 'http://student-example-api.herokuapp.com/v1/orders.json', { //pass order key to api
-    order: {
+  fetchApi('post', 'http://localhost:6001/orders', { //pass order key to api
+    orders: {
       name,
       email,
-      order_items_attributes: cart.map(item => ({
+      order_items: cart.map(item => ({
         product_id: item.id,
         qty: item.quantity
       }))
@@ -22,8 +21,7 @@ const submitOrder = (values, cart) => {
       alert('Something Went Wrong!')
       return json;
     }
-    console.log('Values:',values)
-    console.log('Cart:',cart)
+    console.log('test');
     document.location.href = `/orders/${json.id}`
   })
 }

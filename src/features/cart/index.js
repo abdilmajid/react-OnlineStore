@@ -37,7 +37,13 @@ const Cart = (props) => {
         <tbody>
           {
             props.cart.map(item => <tr>
-                <td>{item.name}</td>
+                <td>
+                <img
+                    height={32} 
+                    src={item.image}
+                    alt='item'/> 
+                 {`--  ${item.name}`}    
+                </td>
                 <td>{item.quantity}</td>
                 <td>${item.price}</td>
                 <td>

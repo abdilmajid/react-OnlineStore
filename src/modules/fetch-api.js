@@ -12,7 +12,7 @@ export default function fetchApi(method, url, data) {
     },
     credentials: 'same-origin',
     ...body,
-  }).then(response => response.json())                
+  }).then(res => res.json())                
 }
 
 

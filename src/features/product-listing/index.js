@@ -9,7 +9,8 @@ class ProductListing extends Component {
   //when component mounts it will do an async request to api
   componentDidMount() {
     const { loadProducts } = this.props
-    fetchApi('get', 'http://student-example-api.herokuapp.com/v1/products.json')
+    // http://student-example-api.herokuapp.com/v1/products.json
+    fetchApi('get', 'http://localhost:6001/products')
       .then((json) => {
         loadProducts(json)
       })
@@ -20,8 +21,7 @@ class ProductListing extends Component {
     return <div className='product-listing'>
         {
           products.map((product) => {
-            {// JSONdata => Porducts(prop), addToCart and removeFromCart, are passed to ProductListItems.js as prop
-            } return ( 
+           return ( 
                 <ProductListItem
                     key={product.id} 
                     product={product}

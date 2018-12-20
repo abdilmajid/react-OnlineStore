@@ -3,17 +3,15 @@ import fetchApi from '../../modules/fetch-api';
 import { Row , Col, Media } from 'react-bootstrap';
 
 class Order extends Component {
-  constructor(){
-    super()
-
+  constructor(props){
+    super(props)
     this.state = {
       order: null,
     }
   }
-
-
+  
   componentDidMount(){
-    fetchApi('get', `https://student-example-api.herokuapp.com/v1/orders/${this.props.id}`)
+    fetchApi('get', `http://localhost:6001/orders/${this.props.id}`)
       .then(json => {
         this.setState({
           order: json
@@ -26,7 +24,7 @@ class Order extends Component {
     const { name, email, order_items } = this.state.order
 
     const orderTotal = order_items.reduce((all, item, index) => {
-      const { qty, product: {price}} = item
+      const { qty, products: {price}} = item
       all += (qty * price);
       const total = parseFloat(all.toFixed(2))
       return total;
@@ -40,7 +38,7 @@ class Order extends Component {
         <ul>
           {
             order_items && order_items.map(item => {
-              const { qty, product: {name, image, price, }} = item
+              const { qty, products: {name, image, price }} = item
               
               return (
               <div>
