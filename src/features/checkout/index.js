@@ -23,6 +23,7 @@ const submitOrder = (values, cart) => {
     }
     console.log('test');
     document.location.href = `/orders/${json.id}`
+    localStorage.clear()
   })
 }
 
