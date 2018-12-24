@@ -5,12 +5,15 @@ import ProductListItem from './ProductListItem';
 import { connect } from 'react-redux';
 import fetchApi from '../../modules/fetch-api';
 
+
+const apiCall = 'http://localhost:4001'
+
+
 class ProductListing extends Component {
   //when component mounts it will do an async request to api
   componentDidMount() {
     const { loadProducts } = this.props
-    // http://student-example-api.herokuapp.com/v1/products.json
-    fetchApi('get', 'http://localhost:6001/products')
+    fetchApi('get', `${apiCall}/products`)
       .then((json) => {
         loadProducts(json)
       })

@@ -2,19 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Table} from 'react-bootstrap';
 
-//Stops items from moving up and down, sorts items by id
-// const sortItem = (items) => {
-//   return items.sort((a, b) => {
-//     return a.id < b.id
-//   })
-// }
-
-// const reducer = (accumulator, currentValue) => accumulator + currentValue;
-// const itemTotal = this.props.cart.price.reduce(reducer)
-
-
-
-
 const Cart = (props) => {
 
   const itemTotal = props.cart;

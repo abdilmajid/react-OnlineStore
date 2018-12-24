@@ -5,9 +5,13 @@ import Cart from '../cart';
 import CheckoutForm from '../checkout/form';
 import fetchApi from '../../modules/fetch-api';
 
+
+
+const apiCall = 'http://localhost:4001'
+
 const submitOrder = (values, cart) => {
   const { email, name } = values.order
-  fetchApi('post', 'http://localhost:6001/orders', { //pass order key to api
+    fetchApi('post', `${apiCall}/orders`, { //pass order key to api
     orders: {
       name,
       email,

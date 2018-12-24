@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import fetchApi from '../../modules/fetch-api';
 import { Row , Col, Media } from 'react-bootstrap';
 
+
+
+const apiCall = 'http://localhost:4001'
+
+
 class Order extends Component {
   constructor(props){
     super(props)
@@ -11,7 +16,7 @@ class Order extends Component {
   }
   
   componentDidMount(){
-    fetchApi('get', `http://localhost:6001/orders/${this.props.id}`)
+    fetchApi('get', `${apiCall}/orders/${this.props.id}`)
       .then(json => {
         this.setState({
           order: json
