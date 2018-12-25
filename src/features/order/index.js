@@ -16,6 +16,7 @@ class Order extends Component {
   }
   
   componentDidMount(){
+    console.log('get request')
     fetchApi('get', `${apiCall}/orders/${this.props.id}`)
       .then(json => {
         this.setState({

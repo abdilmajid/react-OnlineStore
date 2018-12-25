@@ -20,7 +20,8 @@ const submitOrder = (values, cart) => {
         qty: item.quantity
       }))
     }
-  }).then(json => {
+  })
+  .then(json => {
     if(json.errors){
       alert('Something Went Wrong!')
       return json;
