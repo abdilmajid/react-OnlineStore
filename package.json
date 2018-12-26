@@ -14,9 +14,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "redux": "^4.0.1",
-    "redux-form": "^7.4.2",
-    "redux-form-yup": "^0.0.5",
-    "yup": "^0.26.6"
+    "redux-form": "^7.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
