@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import fetchApi from '../../modules/fetch-api';
 
 
-const apiCall = 'https://storeapp-server.herokuapp.com/'
+const apiCall = 'https://storeapp-server.herokuapp.com'
 
 
 class ProductListing extends Component {
