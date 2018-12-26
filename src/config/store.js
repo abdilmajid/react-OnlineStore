@@ -10,7 +10,6 @@ function saveToLocalStorage(state){
   try{
     const serializedState = JSON.stringify(state)
     localStorage.setItem('state', serializedState)
-    console.log(state)
   } catch(e){
     console.log(e)
   }
