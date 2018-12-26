@@ -17,7 +17,7 @@
     "redux-form": "^7.4.2"
   },
   "engines": {
-    "node": "8.11.3",
+    "node": "10.14.2",
     "npm": "6.4.1"
   },
   "scripts": {
