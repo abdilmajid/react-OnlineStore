@@ -4,7 +4,7 @@ import { Row , Col, Media } from 'react-bootstrap';
 
 
 
-const apiCall = 'https://storeapp-server.herokuapp.com'
+const apiCall = 'https://storeapp-backend.herokuapp.com'
 
 
 class Order extends Component {
@@ -16,7 +16,7 @@ class Order extends Component {
   }
   
   componentDidMount(){
-    console.log('get request')
+    // console.log('get request')
     fetchApi('get', `${apiCall}/orders/${this.props.id}`)
       .then(json => {
         this.setState({
