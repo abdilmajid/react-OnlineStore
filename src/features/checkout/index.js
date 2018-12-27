@@ -6,7 +6,7 @@ import CheckoutForm from '../checkout/form';
 import fetchApi from '../../modules/fetch-api';
 
 
-
+// https://storeapp-server.herokuapp.com
 const apiCall = 'https://storeapp-server.herokuapp.com'
 
 const submitOrder = (values, cart) => {
