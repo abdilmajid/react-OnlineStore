@@ -4,8 +4,8 @@ import { Row , Col, Media } from 'react-bootstrap';
 
 
 
-const apiCall = 'https://storeapp-backend.herokuapp.com'
-
+// const apiCall = 'https://storeapp-backend.herokuapp.com'
+const apiCall = 'http://localhost:4001'
 
 class Order extends Component {
   constructor(props){

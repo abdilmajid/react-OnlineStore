@@ -6,8 +6,8 @@ import { connect } from 'react-redux';
 import fetchApi from '../../modules/fetch-api';
 
 
-const apiCall = 'https://storeapp-backend.herokuapp.com'
-
+// const apiCall = 'https://storeapp-backend.herokuapp.com'
+const apiCall = 'http://localhost:4001'
 
 class ProductListing extends Component {
   //when component mounts it will do an async request to api
