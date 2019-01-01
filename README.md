@@ -46,14 +46,14 @@ This project is a simple ecommerce shop that allows visitors to select from a wi
 <br>
 
 >### ***Other Tools***
-<a href=''>
+<a href='https://www.heroku.com/'>
 <img src="src/readme/logo-square-heroku.png" alt="Heroku" height=80 align="center"/></a>
-<a href=''>
+<a href='https://www.npmjs.com/'>
 <img src="src/readme/1280px-Npm-logo.svg.png" alt="npm" height=25 align="center"/></a>
-<a href=''>
+<a href='https://git-scm.com/'>
 <img src="src/readme/1_QoR3rxWIbnf5wmF_IuAHqQ.png" alt="git" height=30 align="center"/></a>
-<a href=''>
-<img src="src/readme/github-logo.png" alt="postgres" height=40 align="center"/></a>
+<a href='https://github.com/'>
+<img src="src/readme/github-logo.png" alt="github-logo" height=40 align="center"/></a>
 <br>
 <br>
 
