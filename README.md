@@ -11,7 +11,7 @@
 ## Table of Contents
 - [Synopsis](#Synopsis)
 - [Tools Used](#tools-used)
-- [Walkthrough ](#tools-used)
+- [Walkthrough ](#Walkthrough)
 
 <br>
 
