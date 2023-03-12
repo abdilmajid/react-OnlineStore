@@ -23,7 +23,7 @@ const Cart = (props) => {
         </thead>
         <tbody>
           {
-            props.cart.map(item => <tr>
+            props.cart.map((item,index) => <tr key={index}>
                 <td>
                 <img
                     height={32} 

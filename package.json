@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": false,
   "dependencies": {
+    "dotenv": "^16.0.3",
     "es6-promise": "^4.2.5",
     "formik": "^1.4.1",
     "isomorphic-fetch": "^2.2.1",
@@ -37,7 +38,6 @@
   ],
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/abdilmajid/react-OnlineStore.git"

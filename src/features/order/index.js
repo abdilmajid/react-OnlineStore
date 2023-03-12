@@ -5,7 +5,7 @@ import { Row , Col, Media } from 'react-bootstrap';
 
 
 // const apiCall = 'https://storeapp-backend.herokuapp.com'
-const apiCall = 'http://localhost:4001'
+const apiCall = 'http://localhost:3002'
 
 class Order extends Component {
   constructor(props){
@@ -47,11 +47,11 @@ class Order extends Component {
               const { qty, products: {name, image, price }} = item
               
               return (
-              <div>
+              <div key={item.id}>
                 <div className='item-info'>
                   <Media>
                     <Media.Left>
-                      <img src={image} width={50}/>
+                      <img alt='' src={image} width={50}/>
                     </Media.Left>
                     <Media.Body>
                       <p>{name}</p>

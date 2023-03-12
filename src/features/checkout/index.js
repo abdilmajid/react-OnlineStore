@@ -7,7 +7,7 @@ import fetchApi from '../../modules/fetch-api';
 
 
 // 'https://storeapp-backend.herokuapp.com'
-const apiCall = 'http://localhost:4001'
+const apiCall = 'http://localhost:3002'
 
 const submitOrder = (values, cart) => {
   const { email, name } = values.order
