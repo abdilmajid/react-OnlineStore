@@ -1,13 +1,10 @@
 import React, { Component} from 'react';
 import ProductListItem from './ProductListItem';
 
-
 import { connect } from 'react-redux';
 import fetchApi from '../../modules/fetch-api';
 
-
-// const apiCall = 'https://storeapp-backend.herokuapp.com'
-const apiCall = 'http://localhost:3002'
+const apiCall = process.env.REACT_APP_API_CALL
 
 class ProductListing extends Component {
   //when component mounts it will do an async request to api
@@ -18,8 +15,6 @@ class ProductListing extends Component {
         loadProducts(json)
       })
   }
-
- 
 
   render() {
     const { addToCart, removeFromCart, products, cart} = this.props

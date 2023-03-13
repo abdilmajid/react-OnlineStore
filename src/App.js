@@ -11,7 +11,6 @@ class App extends Component {
     return (
       <div className='page-container'>
         <Navigation {...this.props}/>
- 
         <Router />
       </div>
     );

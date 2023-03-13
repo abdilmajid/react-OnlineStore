@@ -1,9 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-
 import Cart from '../features/cart';
-
 
 const CartPage = (props) => {
   return (

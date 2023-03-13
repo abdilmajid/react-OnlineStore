@@ -1,7 +1,8 @@
 //helper function that goes over all items in cart and returns all cart items that don't match the current item were trying to add
 const cartWithoutItem = (cart, item) => cart.filter(cartItem => cartItem.id !== item.id)
 // helper function that returns items that match current item were trying to add, returns array of one item
-const itemInCart = (cart, item) => cart.filter(cartItem => cartItem.id === item.id)[0]
+const itemInCart = (cart, item) =>  cart.filter(cartItem => cartItem.id === item.id)[0]
+
 
 //...cartWithoutItem(cart, item) => are all items previously in cart except for current item were trying to add
 const addToCart = (cart, item) => {

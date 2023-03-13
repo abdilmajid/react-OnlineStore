@@ -6,12 +6,11 @@ import CheckoutForm from '../checkout/form';
 import fetchApi from '../../modules/fetch-api';
 
 
-// 'https://storeapp-backend.herokuapp.com'
-const apiCall = 'http://localhost:3002'
+const apiCall = process.env.REACT_APP_API_CALL
 
-const submitOrder = (values, cart) => {
-  const { email, name } = values.order
-    fetchApi('post', `${apiCall}/orders`, { //pass order key to api
+const submitOrder = async(values, cart) => {
+  const { email, name } =  values.order
+   await fetchApi('post', `${apiCall}/orders`, { //pass order key to api
     orders: {
       name,
       email,

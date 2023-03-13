@@ -1,8 +1,6 @@
 import React from 'react';
 import ProductListing from '../features/product-listing';
 
-
-
 const HomePage = (props) => {
   return (
     <div>

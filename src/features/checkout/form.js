@@ -4,8 +4,7 @@ import { Form , FormGroup, Button} from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 
-function CheckoutForm(props) {
-  const { handleSubmit } = props
+const CheckoutForm = ({handleSubmit}) => {
 
   return (
   <div>
@@ -29,8 +28,8 @@ function CheckoutForm(props) {
   )
 }
 
-CheckoutForm = reduxForm({
+export default reduxForm({
   form: 'checkout'
-})(CheckoutForm)
+})(CheckoutForm);
 
-export default CheckoutForm;
+ 
