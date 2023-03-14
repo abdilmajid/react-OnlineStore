@@ -25,7 +25,7 @@ const submitOrder = async(values, cart) => {
       alert('Something Went Wrong!')
       return json;
     }
-    console.log('test');
+    console.log(json.id)
     document.location.href = `/orders/${json.id}`
     localStorage.clear()
   })
