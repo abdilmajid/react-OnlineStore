@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Button, Table} from 'react-bootstrap';
 
 const Cart = (props) => {
-
+  const sort = (items) => items.sort((a,b)=> a.id - b.id)
   const itemTotal = props.cart;
   const itemTotals = itemTotal.reduce((all, item, index) => {
     all += (item.quantity * item.price);
@@ -23,7 +23,7 @@ const Cart = (props) => {
         </thead>
         <tbody>
           {
-            props.cart.map((item,index) => <tr key={index}>
+            sort(props.cart).map((item) => <tr>
                 <td>
                 <img
                     height={32} 
